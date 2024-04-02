@@ -24,6 +24,10 @@ jobs:
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/v}
           fi
+          #if this is a branch, use the branch name instead
+          if [[ $GITHUB_REF == refs/heads/* ]]; then
+            VERSION=${GITHUB_REF#refs/heads/}
+          fi
 
           TAGS="${DOCKER_IMAGE}:${VERSION}"
 
