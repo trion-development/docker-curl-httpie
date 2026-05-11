@@ -6,3 +6,4 @@ adduser -u 1000 user -D && \
 addgroup user wheel
 
 USER 1000
+WORKDIR /home/user
